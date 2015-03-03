@@ -1,29 +1,87 @@
-# pontelab.com
+## Menu Responsivo
 
-The pontelab.com UI toolkit is a tool for rapid website development. It provides a set of fully-functional components and structures that can be used to build scalable web pages.
+Animação do menu baseado: [Secondary Expandable Menu](http://goo.gl/8teouW)
 
-## Getting Started
 
-pontelab.com requires [node.js](http://nodejs.org). Make sure your have `v0.10` or higher installed before proceeding.
+## Ícones
 
-**Start the local development environment:**
+Importação dos ícones
+- Facebook
+- Linkdean
+- Envelope
+- Mouse
+- Ícone Maps
 
-`$ npm start`
 
-### Development Environment Features
+## Style Guide - Atomic Design
 
-- Live preview sever (using [BrowserSync](http://www.browsersync.io/))
-- CSS Autoprefixing
-- Sass compilation
-- Browserify bundling
-- Image optimization
+Baseado no atomic design as estrutuas
 
-## Build
+```
+|-boson
+| |-- boson_button.sty
+| |-- boson_image.sty
+| |-- boson_image.sty 
+| |-- boson_image.sty 
+|-quarks
+|-atons
+|-molecules
+|-organism
+```
 
-**Build for production release:**
+## Front-End
+Será utilizado o JADE + Stylus desenvolvimento da base incluindo [Wai-aria](http://goo.gl/acLI46) e [Microdatas](http://goo.gl/O1dxWU).
 
-`$ npm run build`
 
-Fabricator builds both a static documentation site and optimized CSS and JS toolkit files.
 
-The build artifacts output to the `dist` directory. This can be deployed to any static hosting environment - no language runtime or database is required.
+## Parallax
+
+Será feito com PureJS nos baseamos no código de [Robby Leonardi](http://goo.gl/MitCP)
+
+
+- Sessão Home
+- Sobre a Empresa
+- Sessão Serviços
+
+## Formulário
+ 
+- Criação do formulário
+- Status de avisos
+  - Sucesso
+  - Alerta
+  - Erro
+- Modo Online e Offline
+  
+
+## Google Maps
+
+- Alterar saturação para preto e branco; [Custom Google Maps](http://goo.gl/FrnyfR)
+- Colocar Ícone de localização personalizado
+- Colocar ícones de zoom out e zoom in
+
+
+## Multilingue
+
+Criar Sistema Multilingue e reconhecer idioma pelo browser. Será desenolvido em JADE cada idioma terá sua página em `.html`
+
+- Português
+- Espanhol
+- Inglês - default
+- Francês - em estudo
+
+
+##SEO
+
+- Colocar metas
+  - Facebook/Google Plus
+  - Twitter
+  - Busines 
+- Favicons
+- Title
+- Google Annalytic
+
+## Pagespeed
+
+Objetivo é atingir 98 pontos .
+
+- Versão (0.5)[] - 65 pontos.
