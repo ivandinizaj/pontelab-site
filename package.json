@@ -1,0 +1,59 @@
+{
+  "name": "fabricator",
+  "version": "0.7.0",
+  "description": "Fabricator is a tool for creating modular website toolkits",
+  "homepage": "http://resource.github.io/fabricator/",
+  "main": "README.md",
+  "scripts": {
+    "gulp": "gulp",
+    "prestart": "npm install",
+    "build": "npm install && gulp",
+    "start": "gulp --dev"
+  },
+  "keywords": [
+    "toolkit",
+    "framework",
+    "scaffold",
+    "patterns",
+    "library"
+  ],
+  "author": "Luke Askew",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/resource/fabricator/blob/master/LICENSE.md"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/resource/fabricator.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.2.1",
+    "change-case": "^2.1.5",
+    "del": "^0.1.3",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.4.2",
+    "gulp-data": "^1.2.0",
+    "gulp-if": "~1.2.2",
+    "gulp-imagemin": "^2.0.0",
+    "gulp-imports": "0.0.3",
+    "gulp-jade": "^1.0.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-load-plugins": "^0.8.1",
+    "gulp-plumber": "^0.6.5",
+    "gulp-rename": "~1.2.0",
+    "gulp-stylus": "^2.0.1",
+    "gulp-swig": "^0.7.4",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^2.2.20",
+    "jeet": "^6.1.2",
+    "kouto-swiss": "^0.11.8",
+    "psi": "^1.0.6",
+    "run-sequence": "^1.0.2",
+    "rupture": "^0.6.1"
+  }
+}

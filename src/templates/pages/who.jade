@@ -1,0 +1,19 @@
+section.diagonal
+  .center
+    ul
+      each team in who_team
+        li
+          figure
+            img(
+              src='images/team/#{team.image}'
+              alt= team.name
+              title= team.name)
+          h3= team.name
+          h4= team.role
+
+          div
+            a(href= team.facebook title='Veja meu Facebook')
+              i Facebok
+
+            a(href= team.linkedin title='Veja meu Linkedin')
+              i Linkedin

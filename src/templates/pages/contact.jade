@@ -1,0 +1,46 @@
+footer
+  header
+    section#google-map
+      div#map-container
+      button#map-zoom-in
+      button#map-zoom-out
+
+  section
+    aside(role='info-contact')
+
+      header
+        h3 Ponte Lab
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, nihil. Natus eum veritatis saepe aperiam fugit accusamus quibusdam necessitatibus nisi ut rerum molestias omnis ad vitae, repellendus ea. Repellendus, delectus!
+        hr.
+
+      hr.
+
+      article
+        ul
+          li 
+            i. 
+            a(href='') Av. Luiz Antônio de Araújo 211
+          li
+            i.
+            a(href='tel:558132664025') +55 81 3266.4025
+          li
+            i.
+            a(href='mailto:ola@pontelab.com?subject=') ola@pontelab.com
+
+    article(role='form-contact')
+      header
+        h3 #{contact_title}
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus laboriosam perferendis possimus tempore, esse odio sequi, nisi dignissimos ratione harum, eveniet hic quisquam suscipit. Ullam eos quam molestiae accusamus dicta.
+
+      section
+
+        form(method='post' name='')
+          input(type='text' name='name' placeholder='' required).
+          input(type='email' name='email' placeholder='' required).
+          input(type='tel' name='phone' placeholder='Deixe em branco').
+          select(name='sujet' placeholder='' required)
+            option(value='')
+          textarea(name='msg' placeholder='' required). 
+
+  footer
+    |&copy; - #{title_footer}

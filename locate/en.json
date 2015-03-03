@@ -1,0 +1,19 @@
+{
+  "title": "Ponte Lab - Interactive Agency",
+  "description": "Ponte Lab - Interactive Agency",
+  "url": "http://pontelab.com",
+
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+
+  "about-title": "About",
+  "about-text": "",
+
+  "contact-name": "Name",
+  "contact-email": "Email",
+  "contact-msg": "Mensagem"
+}

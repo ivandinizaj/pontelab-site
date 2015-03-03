@@ -1,0 +1,35 @@
+/**
+  Mixins
+**/
+button(border-color = false, bg-color = false)
+  padding: .5em 1em
+  background-color: transparent
+  font-size: 1em
+  text-transform: uppercase
+  letter-spacing: .13em
+  color: $boson-button
+  border-style: solid
+  border-width:  2px
+  if border-color
+    border-color: border-color
+  
+  background-color : bg-color ? bg-color : transparent  
+
+  cursor: pointer  
+  transition: background $transition-speed, color $transition-speed
+
+button-hover(color = $white)
+  color: invert( color )
+ 
+$boson-button
+  button
+
+$boson-button-hover
+  button-hover $black
+
+$boson-button-dark
+  button $light-gray $dark-gray
+  
+$buson-button-dark-hover
+  button-hover $white
+

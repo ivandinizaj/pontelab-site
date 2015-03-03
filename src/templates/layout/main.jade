@@ -1,0 +1,84 @@
+doctype 
+html(lang='#{lang}')
+  head
+    title #{title}
+
+    meta(charset='utf-8')
+
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='description' content=description)
+    meta(name='copyright' content!='&copy; Copyright 2015 Ponte Lab')
+
+    meta(property='og:title' content='')
+    meta(property='og:image' content='')
+    meta(property='og:url' content='')
+    meta(property='og:site_name' content='')
+    meta(property='og:description' content='')
+
+    meta(name='twitter:title' content='')
+    meta(name='twitter:image' content='')
+    meta(name='twitter:url' content='')
+    meta(name='twitter:card' content='')
+
+    link(rel='canonical' href=url)
+
+    link(rel='stylesheet' href='styles/main.css')
+
+    //[if IE 9]>
+      script.
+        meta(http-equiv='refresh', content='0; url='#{url}/ie')
+    //<![endif]
+
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+      _gaq.push(['_trackPageview']);
+
+  body
+
+    //Caso usuário por teimosia ou más intenções
+      será ocultado o formulário para evitar transtornos
+    noscript
+      style.
+        #contato{
+          display: none;
+        }
+
+    main.content
+      section(role='page-home').home
+        include ../pages/home.jade
+
+      section(role='page-about')
+        include ../pages/about.jade
+      
+      section(role='page-who')
+        include ../pages/who.jade
+
+      section(role='page-services')
+        include ../pages/services.jade
+
+      section(role='page-portfolio')
+        include ../pages/portfolio.jade
+
+      section(role='page-client')
+        include ../pages/client.jade
+
+      section(role='page-contact')
+        include ../pages/contact.jade
+
+    nav.navigation
+      ul
+        each name, slug in nav
+          li.item-nav
+            a(href='#!/#{slug}' title='#{name}').link-nav
+              |#{name}
+
+    script.
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    script(src='scripts/vendor/skrollr.js')
+    script(src='scripts/main.js')

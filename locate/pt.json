@@ -1,0 +1,89 @@
+{
+  "name": "Ponte Lab",
+  "title": "Ponte Lab - Agência Interativa",
+  "description": "Ponte Lab - Agência Interativa",
+  "url": "http://pontelab.com",
+  "lang": "pt-br",
+
+
+  "nav": {
+    "home": "Início",
+    "about": "Quem Somos",
+    "services": "Serviços",
+    "contact": "Contato"
+  },
+
+
+
+  "about_title": "Somos a Ponte para as Pessoas",
+  "about_text": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique fugit eveniet commodi, molestias quibusdam esse inventore odio pariatur ipsam. Ad officiis aperiam cupiditate, quo doloremque! Aliquid illum officia, laborum porro! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur,  libero quas qui nulla eligendi error nesciunt ex iste! Enim distinctio voluptatum facilis, illum autem dolorem deserunt sapiente optio non!",
+  "about_button": "Nosso portfolio",
+
+
+  "who_title" : "Quem Faz",
+  "who_description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quod repudiandae, sint autem natus fuga placeat adipisci rem tempora deserunt vitae repellendus quis corporis repellat? Ipsa, beatae, quaerat? Molestiae, numquam.",
+  "who_team" : [
+    {
+      "name" : "Ivan Diniz",
+      "image": "ivandinizaj.jpg",
+      "role" : "Diretor de Produção",
+      "facebook" : "http://fb.com/ivandinizaj",
+      "linkedin" : "http://linkedin.com/ivandinizaj"
+    },
+    {
+      "name" : "Helton Busatto",
+      "image": "heltonbusatto.jpg",
+      "role" : "Diretor Comercial",
+      "facebook" : "http://fb.com/helton",
+      "linkedin" : "http://linkedin.com/helton"
+    },
+    {
+      "name" : "Mazaroto Santos",
+      "image": "mazarotosantos.jpg",
+      "role" : "Diretor de Criação",
+      "facebook" : "http://fb.com/mazarotosantos",
+      "linkedin" : "http://linkedin.com/mazarotosantos"
+    }
+
+  ],
+
+  "portfolio": [
+    {
+      "title": "Stampa Midia",
+      "link": "http://www.stampamidia.com.br",
+      "image": "images",
+      "tags": ""
+    },
+    {
+      "title": "Bgourmet",
+      "link": "http://www.stampamidia.com.br",
+      "image": "images",
+      "tags": ""
+    },
+    {
+      "title": "Janeide Almeida",
+      "link": "http://www.cucinadecarli.com.br",
+      "image": "images",
+      "tags": ""
+    },
+    {
+      "title": "Radar Comunica",
+      "link": "http://www.radarcomunica.com.br",
+      "image": "images",
+      "tags": ""
+    }
+
+  ],
+  "contact_title": "Contato",
+  "contact_form_name" : "Nome",
+  "contact_form_email" : "E-mail",
+  "contact_form_sujet" : "Assunto",
+  "contact_form_option" : {
+    "" : "",
+    "" : ""
+  },
+  "contact_form_msg" : "Mensagem",
+
+
+  "title_footer" : "PONTE LAB | AGÊNCIA INTERATIVA"
+}
