@@ -1,0 +1,213 @@
+*{
+  margin: 0;
+  padding: 0; 
+}
+
+*, *:after, *:before{ 
+  box-sizing: border-box
+}
+
+html,body{
+  height: 100%;  
+}
+
+figure,figcaption{
+  display: inline-block;
+}
+
+.main{
+  position: relative;
+  height: 100%;
+  overflow-x: hidden; 
+}
+
+.center{
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home .bg{
+  background-image: url(img/2.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: grayscale(1) brightness(.7);
+}
+
+.home h1{
+  position: absolute;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+
+
+.about{
+  position: relative;
+  width: 100%; height: 100%;
+}
+
+.about .bg{
+  position: relative;
+  background-image: url(img/city.jpg);
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 236px;
+}
+
+.team{
+  position: relative;
+  height: 100%; width: 100%;
+  background-color: #000;
+  display: inline-block;
+}
+
+.diagonal:after{
+  background-color: #000;
+  position: absolute;
+  content: '';
+  pointer-events: none;
+  bottom: 0;
+  left: -25%;
+  width: 150%;
+  height: 30%;
+  background: #000;
+  transform: rotate( 6deg);
+  transform-origin: 3% 0;
+  z-index: 500000;    
+}
+
+.team li{
+  display: inline-block;
+  width: 33.33333333%;
+}
+
+.team li div{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+}
+
+
+.service{
+  position: relative;
+  width: 100%; height: 80%;
+}
+
+.service .bg{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(img/1.jpg);
+  -webkit-filter: grayscale(1); 
+  width: 100%; height: 100%;
+}
+
+.service .right{
+  float: right;
+  position: absolute;
+  top: 0; right: 0;
+  background-color: rgba(255,255,255, .5);
+  height: 100%; width: 50%;
+}
+
+.portfolio ul{
+  display: flex;
+  flex-flow: row wrap; 
+}
+
+.portfolio li{
+  list-style: none;
+  width: 25%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #ccc;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.portfolio img{
+  width: 100%;
+  display: flex;
+  transition: -webkit-filter .7s, transform .7s;
+  top: 0;
+  left: 0;
+  zoom: 1;
+  transform: rotate(0) scale(1);
+}
+
+
+.portfolio figcaption, .portfolio figcaption:after{
+  position: absolute;
+
+}
+.portfolio figcaption{
+  width: 90%;
+  height: 90%;
+  top: 5%; left: 5%;
+  z-index: 5;
+}
+.portfolio figcaption:after{
+  content: '';
+  opacity: 0;
+  background-color: rgba(255,255,255, .5);
+  backface-visibility: hidden;
+  transition: opacity .35s;
+  z-index: -1;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transition: .35s;
+}
+
+.portfolio li h3{
+  opacity: 0;
+  margin-top: 40%;
+  font-size: 1.4em;
+  transition: opacity .35s, transform .35s;
+  transform: scale(1.1);
+}
+
+.portfolio li h4{
+  display: block;
+  margin-top: 3%;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity .35s, transform .35s;
+  transform: scale(1.5);
+  width: 100%;
+  text-align: center;
+}
+
+.portfolio li:hover img{
+  transform: rotate(-10deg) scale(1.2);
+  -webkit-filter: grayscale(1); 
+}
+
+.portfolio li:hover figcaption:after{
+  opacity: 1;
+  width: 95%; height: 95%;
+}
+.portfolio li:hover h3,.portfolio li:hover h4{
+  opacity: 1;
+  transform: scale3d(1,1,1);
+}

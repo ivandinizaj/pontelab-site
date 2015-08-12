@@ -15,13 +15,13 @@
 
 
 
-  "about_title": "Somos a Ponte para as Pessoas",
-  "about_text": " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique fugit eveniet commodi, molestias quibusdam esse inventore odio pariatur ipsam. Ad officiis aperiam cupiditate, quo doloremque! Aliquid illum officia, laborum porro! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur,  libero quas qui nulla eligendi error nesciunt ex iste! Enim distinctio voluptatum facilis, illum autem dolorem deserunt sapiente optio non!",
+  "about_title": "Somos a <strong>Ponte</strong> para as Pessoas",
+  "about_text": "Muito além de uma agência, a Ponte Lab é a aliança entre diferentes pessoas que contemplam um mesmo horizonte: mergulhar fundo no desenvolvimento de soluções personalizadas, para que cada indivíduo possa desfrutar seu máximo potencial por meio da humanização tecnológica. ",
   "about_button": "Nosso portfolio",
 
 
   "who_title" : "Quem Faz",
-  "who_description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quod repudiandae, sint autem natus fuga placeat adipisci rem tempora deserunt vitae repellendus quis corporis repellat? Ipsa, beatae, quaerat? Molestiae, numquam.",
+  "who_description" : "Pessoas conectando pessoas.",
   "who_team" : [
     {
       "name" : "Ivan Diniz",
@@ -52,38 +52,42 @@
       "title": "Stampa Midia",
       "link": "http://www.stampamidia.com.br",
       "image": "images",
-      "tags": ""
+      "tags": "#layout #desenvolvimento"
     },
     {
       "title": "Bgourmet",
       "link": "http://www.stampamidia.com.br",
       "image": "images",
-      "tags": ""
+      "tags": "#layotu #desenvolvimento #cms"
     },
     {
       "title": "Janeide Almeida",
       "link": "http://www.cucinadecarli.com.br",
       "image": "images",
-      "tags": ""
+      "tags": "#brand #desenvolvimento"
     },
     {
       "title": "Radar Comunica",
       "link": "http://www.radarcomunica.com.br",
       "image": "images",
-      "tags": ""
+      "tags": "#desenvolvimento #layout"
     }
 
   ],
+
+  "contact_info_title" : "Ponte Lab",
+  "contact_info_text" : "Venha para o lado de cá e chegue aonde você quiser. ",
+
   "contact_title": "Contato",
+  "contact_text": "Cada pessoa é única. Quem é você? Adoramos conversar. :)",
+  
   "contact_form_name" : "Nome",
   "contact_form_email" : "E-mail",
-  "contact_form_sujet" : "Assunto",
-  "contact_form_option" : {
-    "" : "",
-    "" : ""
-  },
+  "contact_form_tel" : "Deixe em branco",
   "contact_form_msg" : "Mensagem",
 
+  "contact_form_title_name" : "Digite seu nome",
+  "contact_form_title_email" : "Digite seu e-mail",
+  "contact_form_title_msg" : "Digite sua mensagem"
 
-  "title_footer" : "PONTE LAB | AGÊNCIA INTERATIVA"
 }

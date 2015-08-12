@@ -2,21 +2,25 @@
 
 // Include project requirements.
 var env       = require('minimist')(process.argv.slice(2)),
-    gulp      = require('gulp'),
-    $         = require('gulp-load-plugins')(),
-    path      = require('path'),
-    jeet      = require('jeet'),
-    rupture   = require('rupture'),
-    koutoSwiss = require('kouto-swiss'),
-    fs        = require('fs'),
-    psi       = require('psi'),
-    browserSync = require('browser-sync'),
-    runSequence = require('run-sequence'),
-    reload      = browserSync.reload;
+  gulp      = require('gulp'),
+  $         = require('gulp-load-plugins')(),
+  path      = require('path'),
+  jeet      = require('jeet'),
+  rupture   = require('rupture'),
+  koutoSwiss = require('kouto-swiss'),
+  fs        = require('fs'),
+  psi       = require('psi'),
+  browserSync = require('browser-sync'),
+  runSequence = require('run-sequence'),
+  reload      = browserSync.reload;
     
 var paths = {
 
-    minifyFiles: ['src/scripts/**/*.js', '!src/scripts/**/_*.js'],
+    allJadeFiles : 'src/templates/**/*.jade',
+    jadeFiles: 'src/templates/*.jade',
+    distJade : 'dist/',
+
+    minifyFiles: ['src/scripts/**/*.js', '!src/scripts/**/_*.js', '!src/scripts/**/APP*.js'],
     lintFiles: ['src/scripts/**/*.js', '!src/scripts/vendor/**/*.js'],
     
     allSrcFiles: 'src/scripts/**/*.js',
@@ -27,39 +31,24 @@ var paths = {
     stylusFolder: 'src/styles/',
     cssFolder: 'dist/styles',
 
-    fontsFiles: 'src/fonts/**',
+    fontsFiles: 'src/fonts/**/*.{ttf,eot,svg,woff,woff2}',
     fontsFolder: 'dist/fonts',
 
     otimizeFiles : ['src/images/**/*.{png,jpg,gif}', '!src/images/**/_*.{png,jpg,gif}' ],
-    imgFolder : 'dist/images',
+    imgFolder : 'dist/images'
 
-};
+}
 
-var onError = function (err){
-  console.log(err);
+var onError = function (err) {
+  console.log(err.message);
 };
 
 var fileName = function (file) {
   return file.replace(/.\w+$/,"");
 };
 
-gulp.task('jade', function(){
-  
-  return gulp.src('src/templates/*.jade')
-    .pipe( $.plumber( { errorHandler: onError } ) )
-    .pipe( $.data(function(file) {
-      return JSON.parse(fs.readFileSync('./locate/' + path.basename(fileName(file.path)) + '.json'));
-    }))
-    .pipe( $.jade({
-            pretty: !env.p
-          }) )
-    .pipe( gulp.dest('dist/') )
-    .pipe(reload({ stream: true }));
-
-});
-
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], function () {
+gulp.task('server', ['styles','jade'], function () {
   browserSync({
     notify: false,
     logPrefix: 'BS',
@@ -67,35 +56,48 @@ gulp.task('serve', ['styles'], function () {
       baseDir: "dist",
       index: "pt.html",
       tunnel: true
-    },
-    ghostMode: {
-      scroll: true
-    }  
+    }
   });
 
-  gulp.watch('src/templates/**/*.jade', ['jade']);
+  gulp.watch( paths.allJadeFiles, ['jade', reload]);
   gulp.watch('assets/**/*.{png,jpg,gif}', reload);
   gulp.watch('locate/*.json',['jade', reload]);
   gulp.watch( paths.allSrcFiles, ['lint','minify', reload] );
   gulp.watch( paths.allStylusFiles, ['styles', reload] );
+});
+
+gulp.task('jade', function(){
+  
+  return gulp.src( paths.jadeFiles )
+    .pipe( $.plumber( { errorHandler: onError } ) )
+
+    .pipe( $.data(function(file) {
+      return JSON.parse(fs.readFileSync('./locate/' + path.basename(fileName(file.path)) + '.json'));
+    }))
+    
+    .pipe( $.jade({
+            pretty: !env.p
+          }) )
+    .pipe( gulp.dest( paths.distJade ) )
+    .pipe(reload({ stream: true }));
 
 });
 
 gulp.task('lint', function() {
 
   return gulp.src(paths.lintFiles)
-      .pipe( $.jshint() )
-      .pipe( $.jshint.reporter('default') )
-      .pipe(reload({ stream: true }));
+    .pipe( $.jshint() )
+    .pipe( $.jshint.reporter('default') )
+    .pipe(reload({ stream: true }));
 
 });
 
 gulp.task('minify', function() {
 
   return gulp.src(paths.minifyFiles)
-      .pipe( $.imports() )
-      .pipe( $.if(env.p, $.uglify()) )
-      .pipe( gulp.dest( paths.distFolder ) );
+    .pipe( $.imports() )
+    .pipe( $.if(env.p, $.uglify()) )
+    .pipe( gulp.dest( paths.distFolder ) );
 });
 
 gulp.task('fonts', function () {
@@ -105,6 +107,7 @@ gulp.task('fonts', function () {
 
 });
 
+
 gulp.task('styles', function() {
 
   return gulp.src([ paths.allStylusFiles, paths.ignoreStylusFiles ])
@@ -113,9 +116,9 @@ gulp.task('styles', function() {
     }))
     
     .pipe( $.stylus({
-        use: [ koutoSwiss(),jeet(), rupture() ],
-        compress: env.p
-      }) )
+      use: [ koutoSwiss(),jeet(), rupture() ],
+      compress: env.p
+    }) )
 
     .pipe( gulp.dest( paths.cssFolder ) )
     .pipe(reload({ stream: true }));
@@ -138,15 +141,15 @@ gulp.task( 'optimize', function () {
 
 gulp.task('mobile', function () {
     return psi('http://www.html5rocks.com', {
-        // key: key
-        nokey: 'true',
-        strategy: 'mobile',
+      // key: key
+      nokey: 'true',
+      strategy: 'mobile',
     }, function (err, data) {
-        console.log(err);
+      console.log(err);
     });
 });
 
 // Build production files, the default task
 gulp.task('default', function (cb) {
-  runSequence('jade','styles', ['minify','lint', 'fonts'], cb);
+  runSequence('jade','styles', ['minify','lint', 'fonts', 'optimize'], cb);
 });

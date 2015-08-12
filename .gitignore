@@ -4,3 +4,6 @@ npm-debug.log
 .npmignore
 .gitattributes
 documention/PonteLab - Site 2015.psd
+/documention/Ponte Lab.docx
+/dist/*
+!/dist/.htaccess

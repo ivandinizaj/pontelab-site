@@ -1,0 +1,19 @@
+.atom-field
+  @extends $boson-field
+  
+  /**
+  * Devido a um problema do Stylus
+  * os @extends não se comporta bem 
+  * dentro de um mixin
+  */  
+  +placeholder()
+    boson-placeholder()
+    transition: opacity $transition-speed ease-in-out
+    
+  &:hover
+    +placeholder()
+      boson-placeholder-hover()
+      
+  &:focus
+    +placeholder()
+      boson-placeholder-focus()  
