@@ -3,16 +3,6 @@
 Animação do menu baseado: [Secondary Expandable Menu](http://goo.gl/8teouW)
 
 
-## Ícones
-
-Importação dos ícones
-- Facebook
-- Linkdean
-- Envelope
-- Mouse
-- Ícone Maps
-
-
 ## Style Guide - Atomic Design
 
 Baseado no atomic design as estrutuas
@@ -69,16 +59,6 @@ Criar Sistema Multilingue e reconhecer idioma pelo browser. Será desenolvido em
 - Inglês - default
 - Francês - em estudo
 
-
-##SEO
-
-- Colocar metas
-  - Facebook/Google Plus
-  - Twitter
-  - Busines 
-- Favicons
-- Title
-- Google Annalytic
 
 ## Pagespeed
 

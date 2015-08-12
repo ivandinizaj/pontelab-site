@@ -7,20 +7,20 @@ meyer-reset();
 @import "bosons/_index"
 //@import "quarks/*"
 @import "atoms/*"
-
+@import "organisms/*"
 
 *, *:before, *:after
   box-sizing: border-box
 
-html, body  
+html, body
   height: 100%
   overflow-x: hidden
 
 html
   text-rendering: optimizeLegibility
-  font-smoothing: antialiased
+  font-smoothing: antialiased 
 
 body
   font: $font-size-base $font-bold $font-family
   background-color: $white
-  color: $boson-font 
+  color: $boson-color

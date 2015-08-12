@@ -9,8 +9,8 @@ footer
     aside(role='info-contact')
 
       header
-        h3 Ponte Lab
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, nihil. Natus eum veritatis saepe aperiam fugit accusamus quibusdam necessitatibus nisi ut rerum molestias omnis ad vitae, repellendus ea. Repellendus, delectus!
+        h3=contact_info_title
+        p=contact_
         hr.
 
       hr.
@@ -18,7 +18,7 @@ footer
       article
         ul
           li 
-            i. 
+            i.
             a(href='') Av. Luiz Antônio de Araújo 211
           li
             i.
@@ -29,18 +29,17 @@ footer
 
     article(role='form-contact')
       header
-        h3 #{contact_title}
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus laboriosam perferendis possimus tempore, esse odio sequi, nisi dignissimos ratione harum, eveniet hic quisquam suscipit. Ullam eos quam molestiae accusamus dicta.
+        h3=contact_title
+        p=contact_text
 
       section
 
-        form(method='post' name='')
-          input(type='text' name='name' placeholder='' required).
-          input(type='email' name='email' placeholder='' required).
-          input(type='tel' name='phone' placeholder='Deixe em branco').
-          select(name='sujet' placeholder='' required)
-            option(value='')
-          textarea(name='msg' placeholder='' required). 
+        form(method='post' name='' class='form')
+          fieldset
+            input(type='text' class='field' name='name' title=contact_form_title_name placeholder=contact_form_name required).
+            input(type='email' class='field' name='email' title=contact_form_title_email placeholder=contact_form_email required).
+            input(type='tel' class='field' name='phone' style='display: none;' placeholder=contact_form_tel).
+            textarea(name='msg' class='field' title=contact_form_title_msg placeholder=contact_form_msg required)
 
   footer
-    |&copy; - #{title_footer}
+    |&copy; | #{title}

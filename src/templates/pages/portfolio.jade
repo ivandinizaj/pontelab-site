@@ -7,9 +7,12 @@
       h3 sub
   article
     ul
-      li
-        figure
-          img(src='http://lorempixel.com/400/400/sports')
-          figcaption
-            h3 Stampa Mídia
-            h4 #design #desenvolvimento
+      each item in portfolio
+        li.gallery-item
+          a=item.link
+          figure
+            img(src=item.image)
+            figcaption
+              h3=item.title
+              h4=item.tags
+

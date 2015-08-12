@@ -1,10 +1,106 @@
+/* Botão tradicional */
 .atom-button
-  color: #000
-  @extends $boson-button
+  @extend $boson-button
+  border-color: $black
+  color: $black
   &:hover
-    @extend $boson-button-hover
-    
+    color: $white
+    background-color: $black
+
+/*  Botão tradicional escuro */
 .atom-button-dark
-  @extend .atom-button 
-  @extend $boson-button-dark
+  @extend .atom-button
+  border-color: $dark-gray
+  color: $light-gray
+  &:hover
+    background-color: $dark-gray
+
+/*  Botão com Ícone */
+.atom-button-icon
+  @extend .atom-button
+  overflow: hidden
   
+  .icon
+    position: absolute
+    transition: top 0.3s
+    margin: auto
+    top: 100%
+    left: 0
+    bottom: 0
+    right: 0
+    color: inherit
+    font-size: 20px
+    vertical-align: middle
+    text-rendering: auto
+    transform: translate3d(0, 0, 0)
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1)
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    
+  span
+    display: block
+    transition: transform .3s, opacity 0.3s
+    transition-delay: .3s
+    
+  &:hover
+    background: inherit
+    color: inherit
+    .icon 
+      transition-delay: .1s
+      top: 40%
+
+    span 
+      opacity: 0
+      transform: translate3d(0, -50%, 0)
+      transition-delay: 0s
+      
+  &.progress
+    cursor: progress
+    .icon
+        transition-delay: .1s
+        top: 40%
+    span
+        opacity: 0
+        transform: translate3d(0, -70%, 0)
+        
+  &.progress div::before, &.progress div::after
+    content: ''
+    position: absolute
+    box-shadow: 0 0 0 2px white
+    border-radius: 50%
+    top: 50%
+    left: @top    
+    width: 30px
+    height: @width
+    opacity: 0
+    margin: -( @width / 2) 0 0 (-(@width / 2))
+    pointer-events: none
+    animation-name: anim-scaled-enhance, anim-opacity
+    animation-duration: 1.2s
+    animation-iteration-count: infinite
+    animation-timing-function: ease-out
+    animation-fill-mode: forwards
+    
+  &.progress div::after
+    animation-delay: .6s
+     
+/**
+  Qualquer class que inicie atom-button e esteja
+  com o atributo :disabled.
+  
+  Ex:
+  <button class="atom-button" disabled>
+  <button class="atom-button-icon" disabled>
+  <button class="atom-button-icon progress" disabled>
+**/
+[class^="atom-button"]:disabled
+  @extends $boson-button-disabled
+    
+  &:hover
+    .icon
+      opacity: 1
+      top: 100%
+
+    span
+      opacity: 1
+      transform: translate3d(0, 0, 0)

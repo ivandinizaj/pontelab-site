@@ -1,0 +1,26 @@
+$boson-field
+  padding: 8px
+  font-size: 1em
+  border: 1px solid $light-gray
+  background-color: $dark-gray
+  color: $white
+  outline: none
+  
+boson-placeholder()
+  color: $white
+  font-size: inherit
+  font-style: italic
+  opacity: .5
+  transition: opacity ($transition-speed * 2) ease-in-out
+  
+boson-placeholder-hover()
+  opacity: .75
+
+boson-placeholder-focus()
+  opacity: 0
+
+$boson-field-hover
+  color: $white-gray
+
+$boson-field-focus
+  color: $white
